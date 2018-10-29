@@ -5,6 +5,7 @@ CREATE OR REPLACE PACKAGE BODY "SERVICEDESK" as
 	v2_cur refcurtyp; 
 
 	begin 
+	    execute immediate 'alter session set "_oracle_script"=true'; 
 		usr_password := 'mypassword';
 		ts_name := upper(substr('TBS_'||p,0,30)); 
 		sql_stmt := 'select ts# from v$tablespace where name = '''||ts_name||''''; 
@@ -31,7 +32,6 @@ CREATE OR REPLACE PACKAGE BODY "SERVICEDESK" as
 	if v2_cur%NOTFOUND then 
 		execute immediate sql_stmt; 
 	else 
-		execute immediate 'alter session set "_oracle_script"=true';
 		execute immediate 'drop user '|| p ||' cascade'; 
 		execute immediate sql_stmt; 
 	end if; 
