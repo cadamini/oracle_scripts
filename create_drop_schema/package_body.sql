@@ -1,4 +1,4 @@
-CREATE OR REPLACE PACKAGE BODY "SERVICEDESK" as 
+CREATE OR REPLACE PACKAGE BODY "SYS"."RDS" as 
 
 	procedure create_schema (p in varchar2) is 
 	TYPE refcurtyp IS REF CURSOR; 
@@ -75,5 +75,5 @@ CREATE OR REPLACE PACKAGE BODY "SERVICEDESK" as
 			dbms_output.put_line('Tablespace  TBS_'|| p ||' deleted.'); 
 		end if; 
 	end; 
-end SERVICEDESK; 
+end RDS; 
 	/

@@ -1,4 +1,4 @@
-CREATE OR REPLACE PACKAGE "SERVICEDESK"
+CREATE OR REPLACE PACKAGE "SYS"."RDS"
 
 AUTHID CURRENT_USER
 IS
@@ -11,5 +11,5 @@ IS
 	
 procedure create_schema(p in varchar2);
 procedure drop_schema(p in varchar2); 
-end servicedesk; 
+end rds; 
 /
